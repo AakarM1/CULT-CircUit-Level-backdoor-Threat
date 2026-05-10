@@ -1,4 +1,4 @@
-# Quantum Federated Learning
+# 𝘊𝘢𝘯 𝘘𝘶𝘢𝘯𝘵𝘶𝘮 𝘍𝘦𝘥𝘦𝘳𝘢𝘵𝘦𝘥 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘞𝘪𝘵𝘩𝘴𝘵𝘢𝘯𝘥 𝘊𝘪𝘳𝘤𝘶𝘪𝘵-𝘓𝘦𝘷𝘦𝘭 𝘉𝘢𝘤𝘬𝘥𝘰𝘰𝘳𝘴?
 
 A research framework for studying **quantum-circuit-level backdoor attacks** in
 federated learning, together with classical and quantum-aware defenses
