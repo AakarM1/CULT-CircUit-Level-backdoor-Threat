@@ -279,4 +279,4 @@ new attacks/defenses are picked up automatically once the CLI flags exist.
 
 ## License
 
-See repository `LICENSE` (if present) for terms.
+Standard `MIT` License, open to use with proper citation.
