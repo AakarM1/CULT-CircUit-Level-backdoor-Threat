@@ -1,0 +1,38 @@
+# =============================================================================
+# Quantum Federated Learning — runtime requirements
+# =============================================================================
+# Tested with Python 3.10 / 3.11 on Linux and Windows. CUDA 12.1 wheels for
+# PyTorch can be substituted; see the bottom of this file for the GPU index URL.
+# =============================================================================
+
+# ---- Core deep learning ----
+torch==2.7.1
+torchvision==0.22.1
+torchtext==0.18.0
+torch-summary==1.4.5
+
+# ---- Quantum simulation ----
+PennyLane==0.41.1
+PennyLane_Lightning==0.41.1
+
+# ---- Classical ML / numerics (used by aggregators, defenses, plots) ----
+scikit-learn==1.7.0
+numpy>=1.26
+scipy>=1.11            # required for Wasserstein / Jensen-Shannon (EXP-1)
+pandas>=2.0            # required for generate_tables.py
+matplotlib>=3.7        # required for generate_tables.py plots
+
+# ---- Logging / TensorBoard ----
+tensorboard==2.19.0
+tensorboard-data-server==0.7.2
+tensorboardX==2.6.4
+tensorflow==2.19.0     # tensorboard back-end; remove if you only use tensorboardX
+
+# ---- Misc ----
+tqdm>=4.65
+
+# -----------------------------------------------------------------------------
+# Optional: GPU-enabled PyTorch (CUDA 12.1)
+# -----------------------------------------------------------------------------
+# pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 \
+#     --index-url https://download.pytorch.org/whl/cu121

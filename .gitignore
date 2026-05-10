@@ -1,0 +1,74 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-log.txt
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+.envrc
+
+# ---- IDE / editor ----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Datasets (downloaded on first run) ----
+data/
+*-ubyte
+*.gz
+
+# ---- Run artifacts / experiment outputs ----
+logs/
+logfiles/
+runs/
+AggData/
+results/
+images/
+Figures/
+
+# ---- Pickled loaders / checkpoints / arrays ----
+*.pk
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.npy
+*.npz
+
+# ---- Logs / temp ----
+*.log
+*.tmp
+*.bak
+
+# ---- Test / lint caches ----
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Local secrets / overrides ----
+.env
+.env.local
+
+# Keep top-level docs and READMEs even though *.txt is broad
+!requirements.txt
+!requirements2.txt
