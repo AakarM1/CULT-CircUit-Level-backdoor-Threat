@@ -5,9 +5,7 @@ federated learning, together with classical and quantum-aware defenses
 (FedAvg, Krum, Multi-Krum, Median, Geometric Median, FoolsGold, MUD-HoG,
 FLGuardian).
 
-The codebase is built on **PyTorch** + **PennyLane** and supports MNIST,
-Fashion-MNIST, CIFAR-10, CIFAR-100, IMDb, and Tiny-ImageNet under IID,
-by-label, and Dirichlet non-IID partitioning.
+The codebase is built on **PyTorch** + **PennyLane** and supports MNIST and CIFAR-10 under IID, by-label, and Dirichlet non-IID partitioning.
 
 ---
 
