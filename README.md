@@ -80,10 +80,10 @@ python parser.py \
 
 Each malicious client implements a two-surface attack:
 
-* **Surface S1 — Quantum circuit poisoning.** During local training, the client
+* **Surface S1 - Quantum circuit poisoning.** During local training, the client
   swaps in a trojan QNode (`q_layer_grover`, `q_layer_noise`, `q_layer_bitflip`,
   or `q_layer_signflip`) on a fraction `--poison_frac` (ρ) of batches.
-* **Surface S2 — Update crafting.** Before transmitting, the raw delta is
+* **Surface S2 - Update crafting.** Before transmitting, the raw delta is
   re-shaped to mimic the honest profile: nearest-neighbour blending,
   null-space projection, norm matching, Gaussian camouflage, and sparsification.
 
@@ -118,7 +118,7 @@ Pass `--disable_s2` to ablate the update-crafting layer (S1-only mode).
 | `--disable_s2`       | off     | skip update-crafting (S1 only)                |
 | `--csv_log_path`     | off     | write per-round divergence CSV                |
 | `--log_norm_cosine`  | off     | log per-client L2 / cosine each round         |
-| `--exp_tag`          | —       | tag string written into CSV rows              |
+| `--exp_tag`          | -       | tag string written into CSV rows              |
 | `--seed`             | 1       | seeds Python `random`, NumPy, and PyTorch     |
 
 Defaults match the standard configuration used across the experiments below
@@ -134,7 +134,7 @@ All six experiments live in `experiments/` and write results under
 are safely resumable. Pass `--dry-run` to print the planned commands without
 launching them, and `--epochs N` to override the default 100 global rounds.
 
-### EXP-1 — Gradient divergence logging
+### EXP-1 - Gradient divergence logging
 Logs per-client update norms ‖Δθ‖₂ and cosine alignment with the mean benign
 update each round, separately for benign and malicious clients, then computes:
 
@@ -146,7 +146,7 @@ update each round, separately for benign and malicious clients, then computes:
 Fixed: q = 0.20, MUD-HoG, MNIST, 100 rounds.
 **Output:** `results/exp1_divergence/{attack}_{aggregator}_rho{rho}_s{seed}.csv`
 
-### EXP-2 — Qubit / depth ablation
+### EXP-2 - Qubit / depth ablation
 Sweeps the quantum encoder width (`--n_qubits`) and entangling depth
 (`--q_depth`).
 
@@ -155,7 +155,7 @@ CIFAR-10: n_qubits ∈ {7, 9}, depth ∈ {2, 4, 6, 8}.
 Fixed: q = 0.20, ρ = 0.9, MUD-HoG, all 4 attacks, 5 seeds, 100 rounds.
 **Output:** `results/exp2_qubit_depth/{dataset}_{attack}_q{nq}_d{depth}_s{seed}.csv`
 
-### EXP-3 — Non-IID α ablation
+### EXP-3 - Non-IID α ablation
 Varies the Dirichlet concentration α together with the malicious fraction q
 across three aggregators.
 
@@ -164,7 +164,7 @@ across three aggregators.
 **Output:** `results/exp3_alpha/{dataset}_{attack}_{agg}_alpha{a}_q{q}_s{seed}.csv`
 A summary CSV with mean ± std across seeds is written by `generate_tables.py`.
 
-### EXP-4 — Local-epoch (E) ablation  *(priority)*
+### EXP-4 - Local-epoch (E) ablation  *(priority)*
 Tests how the number of local epochs interacts with the poisoning rate under
 the strongest defense.
 
@@ -172,7 +172,7 @@ the strongest defense.
 {MNIST, CIFAR-10}, 5 seeds, ρ = 0.9, 100 rounds.
 **Output:** `results/exp4_epochs/{dataset}_{attack}_E{E}_q{q}_s{seed}.csv`
 
-### EXP-5 — ρ × q × aggregator sensitivity
+### EXP-5 - ρ × q × aggregator sensitivity
 Maps how attacker capacity (q), poisoning intensity (ρ), and aggregator
 robustness interact.
 
@@ -180,7 +180,7 @@ robustness interact.
 × aggregators {MUD-HoG, MKrum, FoolsGold} × 4 attacks × MNIST × 5 seeds.
 **Output:** `results/exp5_sensitivity/{attack}_{agg}_rho{rho}_q{q}_s{seed}.csv`
 
-### EXP-6 — S1-only ablation
+### EXP-6 - S1-only ablation
 Disables Surface S2 (update crafting) so only the circuit-level poisoning is
 transmitted raw. Demonstrates the contribution of update crafting to evasion.
 
@@ -261,7 +261,7 @@ keyed by client ID, useful for downstream analysis.
 * The Dirichlet partitioner uses its own internal seed (1) for partition
   reproducibility across runs, matching the original framework.
 * Each experiment driver writes one CSV per (config, seed). If the file
-  already exists, the run is skipped — delete the file to force a re-run.
+  already exists, the run is skipped - delete the file to force a re-run.
 
 ---
 
